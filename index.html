@@ -26,13 +26,14 @@
   <ul>
    <h2>메이저 코드</h2>
 <ul>
-  <li><a href="C.html">C 코드</a></li>
-  <li><a href="D.html">D 코드</a></li>
-  <li><a href="E.html">E 코드</a></li>
-  <li><a href="F.html">F 코드</a></li>
-  <li><a href="G.html">G 코드</a></li>
-  <li><a href="A.html">A 코드</a></li>
-  <li><a href="B.html">B 코드</a></li>
+  <li class="chord-item"><a href="C.html">C</a></li>
+<li class="chord-item"><a href="D.html">Am</a></li>
+<li class="chord-item"><a href="E.html">Dm</a></li>
+<li class="chord-item"><a href="F.html">C</a></li>
+<li class="chord-item"><a href="G.html">Am</a></li>
+<li class="chord-item"><a href="A.html">Dm</a></li>
+<li class="chord-item"><a href="B.html">C</a></li>
+  
 </ul>
 
 <h2>마이너 코드</h2>
@@ -52,6 +53,23 @@
       document.getElementById("result").innerText =
         "해당 코드는 준비 중입니다. 빠른 시일 내에 추가될 예정입니다.";
     };
+
+function searchChord() {
+  const input = document.getElementById("searchInput");
+  const filter = input.value.toUpperCase();
+  const items = document.getElementsByClassName("chord-item");
+
+  for (let i = 0; i < items.length; i++) {
+    const text = items[i].innerText.toUpperCase();
+    if (text.includes(filter)) {
+      items[i].style.display = "";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+}
+
+
   </script>
 
 </body>
