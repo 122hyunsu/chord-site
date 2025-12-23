@@ -129,18 +129,28 @@
   </main>
 
   <!-- 검색 스크립트 -->
-  <script>
-    function searchChord() {
-      const input = document.getElementById("searchInput");
-      const filter = input.value.toUpperCase();
-      const items = document.getElementsByClassName("chord-item");
+  
+<script>
+  function searchChord() {
+    const input = document.getElementById("searchInput");
+    const filter = input.value.toUpperCase();
+    const items = document.getElementsByClassName("chord-item");
 
-      for (let i = 0; i < items.length; i++) {
-        const text = items[i].innerText.toUpperCase();
-        items[i].style.display = text.includes(filter) ? "" : "none";
-      }
+    for (let i = 0; i < items.length; i++) {
+      const text = items[i].innerText.toUpperCase();
+      items[i].style.display = text.includes(filter) ? "" : "none";
     }
-  </script>
+  }
+
+  function handleEnter(event) {
+    if (event.key === "Enter") {
+      document.getElementById("codes-list").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  }
+</script>
+
 
 </body>
 </html>
