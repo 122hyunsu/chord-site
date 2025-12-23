@@ -86,11 +86,12 @@
     <p>자주 쓰이는 기본 코드들을 한눈에 정리했습니다</p>
 
     <input
-      type="text"
-      id="searchInput"
-      placeholder="예: C, Dm, Em"
-      onkeyup="searchChord()"
-    >
+  type="text"
+  id="searchInput"
+  placeholder="예: C, Dm, F#, 플랫은 소문자b로"
+  onkeyup="searchChord()"
+  onkeydown="handleEnter(event)"
+>
 
     <a href="#codes-list">전체 코드 보기</a>
     <div class="scroll-hint">아래로 스크롤 ↓</div>
